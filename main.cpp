@@ -50,6 +50,7 @@ void test_wyrazenia() {
 		using namespace std;
 		int good_points = 0;
 		int bad_points = 0;
+		int percent_result;
 
 		ifstream input_file;
 		input_file.open("file_test.txt");
@@ -100,10 +101,13 @@ void test_wyrazenia() {
 				cout << "failed" << endl;
 		}
 		input_file.close();
+		percent_result = (100/(good_points+bad_points)*good_points);
 		cout << endl;
 		cout << "Koniec testu" << endl;
 		cout << "Ilosc poprawnych odpowiedzi: " << good_points << endl;
 		cout << "Ilosc blednych odpowiedzi: " << bad_points << endl;
+		cout << endl;
+		cout << "Wynik procentowy poprawnych odpowiedzi: " << percent_result << "%" << endl;
 		cout << endl;
 
 		start_test();
@@ -116,14 +120,13 @@ void test_liczby() {
 		using namespace std;
 		int good_points = 0;
 		int bad_points = 0;
+		int percent_result;
 
 		ifstream input_file;
 		input_file.open("liczb_test.txt");
 
 		if(input_file.is_open()) {
 				while(!input_file.eof()) {
-						int good_points = 0;
-						int bad_points = 0;
 						LZESPOLONA liczba;
 						LZESPOLONA in_liczba1;
 						LZESPOLONA in_liczba2;
@@ -150,17 +153,31 @@ void test_liczby() {
 
 
 						if(result == liczba) {
+								good_points += 1;
 								cout << ":) Poprawna odpowiedz!";
 								cout << endl;
-								good_points += 1;
 								continue;
 						}
 						else {
+								bad_points += 1;
 								cout << ":( Bledna odpowiedz!";
 								cout << endl;
-								bad_points += 1;
 						}
 				}
 		}
+		input_file.close();
+		
+		percent_result = (100/(good_points+bad_points))*good_points;
+
+		cout << endl;
+		cout << "Koniec testu" << endl;
+		cout << "Ilosc poprawnych odpowiedzi: " << good_points << endl;
+		cout << "Ilosc blednych odpowiedzi: " << bad_points << endl;
+		cout << endl;
+		cout << "Procentowy wynik dobrych odpowiedzi: " << percent_result << "%" << endl;
+		cout << endl;
+
+		start_test();
 }
 	
+
