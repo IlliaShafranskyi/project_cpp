@@ -6,13 +6,13 @@
 
 class LZESPOLONA {
 		private:
-				// zapis liczby zespołonej: a+bi, gdzie bi to b_i, znak to +, -, *
-				char pierwsza_klamerka;
+				// zapis liczby zespołonej: a+bi, znak to +, -, *
+				char pierwszy_nawias;
 				int a;
 			    char znak;
 				int b;
 				char i;
-				char druga_klamerka;
+				char drugi_nawias;
 
 
 		public:
@@ -27,8 +27,6 @@ class LZESPOLONA {
 				friend bool operator==(LZESPOLONA &obj1, LZESPOLONA &obj2);
 
 				friend void add_attr(LZESPOLONA &obj);
-				friend void check_znack(LZESPOLONA &obj);
-				friend void change_znack(LZESPOLONA &main_obj, LZESPOLONA &obj1, LZESPOLONA &obj2);
 				
 };
 
