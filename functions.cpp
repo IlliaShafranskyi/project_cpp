@@ -1,7 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <threads.h>
-#include <chrono>
 #include "l_zesp.h"
 
 void start_test();
